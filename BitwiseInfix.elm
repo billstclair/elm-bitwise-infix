@@ -61,18 +61,15 @@ import Bitwise
 
 {-| Infix for Bitwise.and -}
 (~&) : Int -> Int -> Int
-(~&) x y =
-  Bitwise.and x y
+(~&) = Bitwise.and
 
 {-| Infix for Bitwise.or -}
 (~|) : Int -> Int -> Int
-(~|) x y =
-  Bitwise.or x y
+(~|) = Bitwise.or
 
 {-| Infix for Bitwise.xor -}
 (~^) : Int -> Int -> Int
-(~^) x y =
-  Bitwise.xor x y
+(~^) = Bitwise.xor
 
 {-| Alias for Bitwise.not.
 Elm does not provide "infix" operators with only a single argument.
@@ -80,23 +77,19 @@ This name let's you import BitwiseInfix exposing (..), without
 worrying about name collisions.
 -}
 lognot : Int -> Int
-lognot x =
-  Bitwise.complement x
+lognot = Bitwise.complement
 
 {-| Infix for Bitwise.shiftLeft -}
 (~<<) : Int -> Int -> Int
-(~<<) x shift =
-  Bitwise.shiftLeft x shift
+(~<<) = Bitwise.shiftLeft
 
 {-| Infix for Bitwise.shiftRight -}
 (~>>) : Int -> Int -> Int
-(~>>) x shift =
-  Bitwise.shiftRight x shift
+(~>>) = Bitwise.shiftRight
 
 {-| Infix for Bitwise.shiftRightLogical -}
 (~>>>) : Int -> Int -> Int
-(~>>>) x shift =
-  Bitwise.shiftRightLogical x shift
+(~>>>) = Bitwise.shiftRightLogical
 
 infixl 5 ~<<
 infixl 5 ~>>
