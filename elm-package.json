@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "summary": "Infix versions of the Bitwise functions.",
     "repository": "https://github.com/billstclair/elm-bitwise-infix.git",
     "license": "MIT",
