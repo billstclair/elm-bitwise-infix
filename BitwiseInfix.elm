@@ -9,13 +9,21 @@
 --
 ----------------------------------------------------------------------
 
-module BitwiseInfix exposing ( (~&), (~|), (~^), lognot
-                             , (~<<), (~>>), (~>>>)
-                             )
+
+module BitwiseInfix
+    exposing
+        ( (~&)
+        , (~|)
+        , (~^)
+        , lognot
+        , (~<<)
+        , (~>>)
+        , (~>>>)
+        )
 
 {-| This module provides infix versions of Elm's Bitwise module functions.
 This greatly eases conversion of existing JavaScript code.
-Intead of changing infix to prefix, just prepend a twiddle (~) 
+Intead of changing infix to prefix, just prepend a twiddle (~)
 to the operators.
 
 ```Bitwise.not``` has no infix operator, since Elm doesn't provide
@@ -59,17 +67,23 @@ import BitwiseInfix exposing (..)
 
 import Bitwise
 
-{-| Infix for Bitwise.and -}
+{-| Infix for Bitwise.and
+-}
 (~&) : Int -> Int -> Int
-(~&) = Bitwise.and
+(~&) =
+    Bitwise.and
 
-{-| Infix for Bitwise.or -}
+{-| Infix for Bitwise.or
+-}
 (~|) : Int -> Int -> Int
-(~|) = Bitwise.or
+(~|) =
+    Bitwise.or
 
-{-| Infix for Bitwise.xor -}
+{-| Infix for Bitwise.xor
+-}
 (~^) : Int -> Int -> Int
-(~^) = Bitwise.xor
+(~^) =
+    Bitwise.xor
 
 {-| Alias for Bitwise.not.
 Elm does not provide "infix" operators with only a single argument.
@@ -77,19 +91,26 @@ This name let's you import BitwiseInfix exposing (..), without
 worrying about name collisions.
 -}
 lognot : Int -> Int
-lognot = Bitwise.complement
+lognot =
+    Bitwise.complement
 
-{-| Infix for Bitwise.shiftLeft -}
+{-| Infix for Bitwise.shiftLeftBy
+-}
 (~<<) : Int -> Int -> Int
-(~<<) = Bitwise.shiftLeft
+(~<<) num shift =
+    Bitwise.shiftLeftBy shift num
 
-{-| Infix for Bitwise.shiftRight -}
+{-| Infix for Bitwise.shiftRightBy
+-}
 (~>>) : Int -> Int -> Int
-(~>>) = Bitwise.shiftRight
+(~>>) num shift =
+    Bitwise.shiftRightBy shift num
 
-{-| Infix for Bitwise.shiftRightLogical -}
+{-| Infix for Bitwise.shiftRightLogical
+-}
 (~>>>) : Int -> Int -> Int
-(~>>>) = Bitwise.shiftRightLogical
+(~>>>) num shift =
+    Bitwise.shiftRightZfBy shift num
 
 infixl 5 ~<<
 infixl 5 ~>>
